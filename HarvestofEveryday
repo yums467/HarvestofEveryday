@@ -6,3 +6,41 @@
     (1)printf("The Correct result is :%s\n", strcat((char *)pHList_str_fst + 4, (char *)pHList_str_scd + 4));
      因为这行代码(提示信息操纵了测试用例),让我误以为代码出现了Bug了，复制了第二个字符串两次，Degbug了整整一天。
     (2)free()字符串出错,因为strcat()字符串拼接使得内存溢出，释放时出错。
+    (3)讲一个指针的声明用const“预先固定”,将使那个对象而不是使这个指针成为常量，要使指针本身成为常量，必须在声
+    明时使用*const;例如:char *const pName = sName;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
