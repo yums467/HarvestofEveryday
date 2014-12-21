@@ -75,8 +75,44 @@ https://github.com/simonmysun/AICLASH
 二、完成了CPLS第四章的课后题作业，即将要解决第五章的，第五章习题做到了第五题，
 字符串的长度通常不考虑后面的'\0'；字符数组的大小要注意加上'\0'。strlen()函数
 在计算字符串长度的时候并没有加上'\0'.
+三、看完了知乎上你好CPP专栏的第十个文章，学习到了wchar_t表示中文的方式:
+#pragma once
+#pragma execution_character_set("utf-8")
+//强制无签名utf-8
 
-    
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	// 定义一个wchar_t类型字符变量
+	// 并用一个中文字符对其赋值，注意赋值的方式L''
+	wchar_t cChs = L'曾';
+	// 设置wcout输出对象的区域并输出中文字符
+	wcout.imbue(locale("chs"));
+	wcout << cChs << endl;
+
+	return 0;
+}
+代码开头的两句话是设置文件格式为utf-8,具体实现方式为:
+https://social.msdn.microsoft.com/Forums/zh-CN/4f5faef2-4e4d-4a42-b199-400f9fd43e5e/vs2013utf8?forum=visualcpluszhchs
+
+我知道了，改"Microsoft Visual Studio 12.0\VC\vcprojectitems"目录下的“newc++file.cpp”和“hfile.h”文件。在里边加入类似于：
+
+#pragma once
+#pragma execution_character_set("utf-8")
+//强制无签名utf-8
+
+这样的有中文或者其他多字符编码的句子，然后另存为65001的utf-8无签名就OK了。
+四、完成了C语言实现泛型栈，解决了历史遗留问题。具体地址等博客审核通过后再贴上来。
+http://blog.csdn.net/yums467/article/details/41891357
+五、完成了”M^N %1003“"回文数"复习了递归的第一个题目寻找组合个数，复习了平衡二叉树的构造过程，理解了很久之前没理解的算法
+思想，若向平衡二叉树中插入一个新结点后破坏了平衡二叉树的平衡性。首先要找出插入新结点后失去平衡的最小子树根结点的指针。
+然后再调整这个子树中有关结点之间的链接关系，使之成为新的平衡子树。
+当失去平衡的最小子树被调整为平衡子树后，原有其他所有不平衡子树无需调整，整个二叉排序树就又成为一棵平衡二叉树。
+（最小子树的概念）。
+XHTML看到XHTML 标准属性，做到padding.
+
     
     
     
